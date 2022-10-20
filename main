@@ -1,0 +1,39 @@
+print("TÜREL BANK'A HOŞGELDİNİZ")
+print("Lütfen Kullanıcı adı ve Şifre Tanımlayınız")
+balance=10000
+
+username=input("Kullanıcı Adı Belirleyin")
+password=input("Parola Belirleyin")
+
+print("Sisteme Giriş Yapmak İçin Kullanıcı Adı ve Parolanızı Griniz")
+
+unc=input("Kullanıcı Adını Gir")
+if unc != username:
+    print("Kullanıcı Adını Yanlış Girdin")
+else:
+    passc=input("Parolanı Gir")
+    if passc != password:
+        print("Şifreni Yanlış Girdin")
+    else:
+        print("GİRİŞ BAŞARILI. Hesabınızda ",balance," Türk Lirası var.") 
+        islem=input("Lütfen Yapacağınız işlemi yazın. Para Yatırma ya da Para Çekme")
+
+        if islem.capitalize() == "Para Çekme".capitalize():
+            amount=int(input("Ne kadar çekmek istiyorsunuz?"))
+
+            if amount>=balance:
+                print("Hesabınızda yeterli tutar yok. Toplam paranız : ", balance)                
+            else:
+                balance=balance-amount
+                print("Paranız Hazır. Kalan Bakiyeniz : " , balance)    
+
+        elif islem.capitalize() == "Para Yatırma".capitalize():
+            pay=int(input("Kaç para yatrmak istiyorsunuz"))
+            balance=balance+pay
+            print("Para Yatırma İşleminiz Tamamlandı. Hesabınızdaki Toplam Bakiye :" , balance)
+        
+        else:
+            print("Yapmak İstediğiniz İşlemi Hatalı Girdiniz. Lütfen Tekrar Giriş Yapınız")
+
+
+print("YİNE BEKLERİZ")
